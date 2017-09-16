@@ -1,0 +1,157 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+#wrapper {
+	width: 1072px;
+	margin: 0px auto;
+	padding: 5px;
+	overflow: hidden;
+    color: black;
+}
+#header {
+    width: inherit;
+    height: 50px;
+    margin-top: 50px;
+}
+#headerleft{
+    width: 950px;
+    height: inherit;
+    display: inline-block;
+    vertical-align: top;
+}
+#headerright {
+    width: 100px;
+    height: inherit;
+    display: inline-block;
+    vertical-align: top;
+}
+#leftwrapper {
+    width: 500px;
+    height: 300px;
+    display: inline-block;
+    vertical-align: top;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 15px; 
+}
+#rightwrapper{
+    width: 500px;
+    height: 300px;
+    display: inline-block;
+    vertical-align: top;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 15px; 
+}
+.msgarea{
+    width: 500px;
+    height: 80px;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    overflow: hidden;
+    /* overflow-y: scroll; */
+}
+#wallheader {
+    width: inherit;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 3px solid black;
+}
+#thewall{
+    width: 80%;
+    height: 1000px;
+    margin: 0px auto;
+    overflow: auto;
+    padding-bottom: 50px;
+}
+.messagetextarea{
+    width: 99%;
+    height: 70px;
+    border: 2px solid black;
+    overflow: auto;
+    font-size: 150%;
+}
+.commenttextarea{
+    width: 97%;
+    height: 50px;
+    border: 2px solid black;
+    overflow: auto;
+    margin-left: 20px;
+    font-size: 150%;
+}
+#displaymessages{
+    margin-top: 40px;
+}
+.msghead{
+    margin-top: 30px;
+    font-size: 150%;
+}
+.msgtext{
+    margin-left: 30px;  
+}
+.cmnthead{
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 120%;
+}
+.cmnttext{
+    margin-left: 60px;
+    font-size: 100%;  
+}
+.postcomment{
+    margin-left: 20px;
+    margin-bottom:10px;
+    margin-top: 20px;
+}
+input{
+    float: right;
+}
+.button{
+    width: 100px;
+    height: 30px;
+    background-color: lightblue;
+    float: right;
+}
+.msgbutton{
+    width: 140px;
+    height: 30px;
+    background-color: #005EFF;
+    position: relative;
+    right: 10px;
+    box-shadow: 5px 5px 5px black;
+    color: white;
+}
+.cmntbutton{
+    width: 140px;
+    height: 30px;
+    background-color: #27BA27;
+    position: relative;
+    right: 5px;
+    box-shadow: 5px 5px 5px black;
+    color: white;
+}
+.deletebutton{
+    width: 140px;
+    height: 30px;
+    background-color: #D02B2B;
+    position: relative;
+    right: 5px;
+    box-shadow: 5px 5px 5px black;
+    color: white;
+}
+h1, h2{
+    margin-bottom: 20px;
+}
+p{
+    display: block;
+    padding: 2px;
+    font-size: 120%;
+}
+.error {
+    color: red;
+}
+.success {
+    color: green;
+}

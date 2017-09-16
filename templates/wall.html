@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>The Wall</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='wall.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="wallheader">
+                <div id="headerleft">
+                    <h1>Welcome {{session['first_name']}}  {{session['last_name']}} ! </h1> 
+                </div>
+                <div id="headerright">
+                    <form action="/logout" method="post">
+                        <input class="button" type="submit" name="logout" value="Logout">
+                    </form>
+                </div>
+            </div>
+            <div id="thewall">
+                <h2>Post a message</h2>
+                <form action="/wall/postmsg" method="post">
+                    <textarea class="messagetextarea" name="message"></textarea>
+                    <input class="msgbutton" type="submit" value="Post a message">
+                </form>
+                <div id="displaymessages">
+                    {% if session['messages'] %}
+                        {%- for msg in session['messages'] %}
+                            <h2 class="msghead" >{{ msg['first_name'] + " " + msg['last_name'] + " - " + msg['msgdate']}}</h2>
+                            <h3 class="msgtext">{{ msg['message'] }}</h3>
+                            {% if msg['user_id'] == session['user_id'] %}
+                                <form action="/wall/postmsg/delete/{{msg['id']}}" method="post">
+                                    <input class="deletebutton" type="submit" value="Delete this message">
+                                </form>
+                            {% endif %}
+                            {% if session['comments'] %}
+                                {% for comment in session['comments']: %}
+                                    {% if msg['id'] == comment["message_id"] %}
+                                        <h2 class="cmnthead" >{{ comment['first_name'] + " " + comment['last_name'] + " - " + comment['cmntdate']}}</h2>
+                                        <h3 class="cmnttext">{{ comment['comment'] }}</h3>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                            <h3 class="postcomment" >Post a comment</h3>
+                            <form action="/wall/postcmnt/{{msg['id']}}" method="post">
+                                <textarea class="commenttextarea" name="comment"></textarea>
+                                <input class="cmntbutton" type="submit" value="Post a comment">
+                            </form>
+                        {% endfor -%}    
+                    {% endif %}
+                </div>
+            </div> 
+        </div>
+    </body>
+</html>
